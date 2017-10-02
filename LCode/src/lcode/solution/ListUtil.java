@@ -32,4 +32,32 @@ public class ListUtil {
         }
         return reverse;
     }
+    
+    /**
+     * 141. Linked List Cycle
+     * 
+     * https://leetcode.com/problems/linked-list-cycle/description/
+     * 
+     * @param head
+     * @return 
+     */
+    public boolean hasCycle(ListNode head) {
+        if (head == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        
+        while (slow != null) {
+            slow = slow.next;
+            if (fast != null && fast.next != null) {
+                fast = fast.next.next;
+            } else {
+                return false;
+            }
+            if (slow == fast)
+                return true;
+        }
+        return false;
+    }
 }
