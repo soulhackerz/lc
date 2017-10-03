@@ -24,9 +24,9 @@ public class ListNode {
     
     public String toString() {
         ListNode temp = next;
-        StringBuilder sb = new StringBuilder(val+",");
+        StringBuilder sb = new StringBuilder(val+"->");
         while (temp != null) {
-            sb.append(temp.val + ",");
+            sb.append(temp.val + "->");
             temp = temp.next;
         }
         sb.append("\n");
