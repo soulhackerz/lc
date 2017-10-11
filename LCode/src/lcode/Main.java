@@ -8,6 +8,7 @@ package lcode;
 import java.util.List;
 import lcode.lib.ListNode;
 import lcode.lib.TreeNode;
+import lcode.solution.ArrayUtil;
 import lcode.solution.ListUtil;
 import lcode.solution.TreeUtil;
 
@@ -20,7 +21,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        test102();
+        test695();
     }
     
     /**
@@ -160,5 +161,23 @@ public class Main {
         List<List<Integer>> result = tu.levelOrder(a);
         
         System.out.println(result);
-    }    
+    }
+    
+    /**
+     * 695. Max Area of Island
+     * 
+     * https://leetcode.com/problems/max-area-of-island/description/
+     */  
+    public static void test695() {
+        int[][] input = {{0,0,1,0,0,0,0,1,0,0,0,0,0},
+ {0,0,0,0,0,0,0,1,1,1,0,0,0},
+ {0,1,1,0,1,0,0,0,0,0,0,0,0},
+ {0,1,0,0,1,1,0,0,1,0,1,0,0},
+ {0,1,0,0,1,1,0,0,1,1,1,0,0},
+ {0,0,0,0,0,0,0,0,0,0,1,0,0},
+ {0,0,0,0,0,0,0,1,1,1,0,0,0},
+ {0,0,0,0,0,0,0,1,1,0,0,0,0}};
+        ArrayUtil au = new ArrayUtil();
+        System.out.println(au.maxAreaOfIsland(input));
+    }     
 }
