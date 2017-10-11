@@ -5,6 +5,7 @@
  */
 package lcode;
 
+import java.util.List;
 import lcode.lib.ListNode;
 import lcode.lib.TreeNode;
 import lcode.solution.ListUtil;
@@ -19,7 +20,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        test111();
+        test102();
     }
     
     /**
@@ -134,4 +135,30 @@ public class Main {
         TreeUtil tu = new TreeUtil();
         System.out.println(tu.minDepth(a));
     }
+    
+    /**
+     * 102. Binary Tree Level Order Traversal
+     * https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+     * 
+     * @param node 
+     */    
+    public static void test102() {
+        TreeNode a = new TreeNode(3);
+        TreeNode b = new TreeNode(9);
+        TreeNode c = new TreeNode(20);
+        TreeNode d = new TreeNode(15);
+        TreeNode e = new TreeNode(7);
+        TreeNode f = new TreeNode(22);
+        TreeNode g = new TreeNode(33);        
+        a.left = b;
+        a.right = c;
+        c.left = d;
+        c.right = e;
+        b.left = f;
+        b.right = g;      
+        TreeUtil tu = new TreeUtil();
+        List<List<Integer>> result = tu.levelOrder(a);
+        
+        System.out.println(result);
+    }    
 }

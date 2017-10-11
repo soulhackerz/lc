@@ -5,6 +5,10 @@
  */
 package lcode.solution;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import lcode.lib.TreeNode;
 
 /**
@@ -46,4 +50,43 @@ public class TreeUtil {
             return 0;
         return Math.min(minDepth(root.right), minDepth(root.left))+1;
     } 
+    
+    /**
+     * 102. Binary Tree Level Order Traversal
+     * https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+     * 
+     * @param node 
+     */    
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+        int count = 0;
+        int level = 1;
+        List<Integer> tempResult = new ArrayList();
+        while(!queue.isEmpty()) {
+            TreeNode temp = queue.poll();
+            level --;
+            if (temp.left != null) {
+                queue.add(temp.left);
+                count++;
+            }
+            if (temp.right != null) {
+                queue.add(temp.right);
+                count++;
+            }
+            tempResult.add(temp.val);
+            if (level == 0) {
+                level = count;
+                count = 0;
+                result.add(tempResult);
+                tempResult = new ArrayList();
+            }
+        }
+        
+        return result;
+    }
 }
