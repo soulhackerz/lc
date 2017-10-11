@@ -6,7 +6,9 @@
 package lcode;
 
 import lcode.lib.ListNode;
+import lcode.lib.TreeNode;
 import lcode.solution.ListUtil;
+import lcode.solution.TreeUtil;
 
 /**
  *
@@ -17,7 +19,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        test83();
+        test111();
     }
     
     /**
@@ -88,5 +90,48 @@ public class Main {
         System.out.print(d);
         ListNode e = lu.deleteDuplicates(d);
         System.out.print(e);
+    }
+    
+    /**
+     * 235. Lowest Common Ancestor of a Binary Search Tree
+     * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+     * 
+     * @param node 
+     */
+    public static void test235() {
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        a.left = b;
+        a.right = c;
+        
+        TreeUtil tu = new TreeUtil();
+        System.out.println(tu.lowestCommonAncestor(a, b, c));
+    }
+    
+    
+    /**
+     * 111. Minimum Depth of Binary Tree
+     * https://leetcode.com/problems/minimum-depth-of-binary-tree/description/
+     * 
+     * @param node 
+     */
+    public static void test111() {
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(4);
+        TreeNode e = new TreeNode(5);
+        TreeNode f = new TreeNode(6);
+        TreeNode g = new TreeNode(7);        
+        a.left = b;
+        a.right = c;
+        b.right = d;
+        b.left = e;
+        c.right = f;
+        c.left = g;   
+        
+        TreeUtil tu = new TreeUtil();
+        System.out.println(tu.minDepth(a));
     }
 }
