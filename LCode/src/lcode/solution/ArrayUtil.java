@@ -12,7 +12,7 @@ package lcode.solution;
 public class ArrayUtil {
     
     /**
-     * 695. Max Area of Island
+     * 695. Max Area of Island (a)
      * 
      * https://leetcode.com/problems/max-area-of-island/description/
      */
@@ -46,4 +46,6 @@ public class ArrayUtil {
         
         return size;
     }
+    
+
 }
