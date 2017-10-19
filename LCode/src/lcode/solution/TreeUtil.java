@@ -89,4 +89,41 @@ public class TreeUtil {
         
         return result;
     }
+    
+    
+    /**
+     * 98. Validate Binary Search Tree
+     * The left subtree of a node contains only nodes with keys less than the node's key.
+     * The right subtree of a node contains only nodes with keys greater than the node's key.
+     * Both the left and right subtrees must also be binary search trees.
+     * https://leetcode.com/problems/validate-binary-search-tree/description/
+     * 
+     * @param node 
+     */ 
+    public boolean isValidBST(TreeNode root) {
+       return false;
+    }
+    
+    /**
+     * 100. Same Tree
+     * Given two binary trees, write a function to check if they are equal or not.
+     * two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+     * https://leetcode.com/problems/same-tree/description/
+     * 
+     */
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+       return false; 
+    } 
+    
+    /**
+     * 108. Convert Sorted Array to Binary Search Tree
+     * Given an array where elements are sorted in ascending order, convert it to a height balanced BST..
+     * 
+     * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
+     * @param nums
+     * @return 
+     */
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return null;
+    }
 }
