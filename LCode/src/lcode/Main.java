@@ -8,6 +8,7 @@ package lcode;
 import java.util.List;
 import lcode.lib.ListNode;
 import lcode.lib.TreeNode;
+import lcode.solution.AmzUtil;
 import lcode.solution.ArrayUtil;
 import lcode.solution.ListUtil;
 import lcode.solution.TreeUtil;
@@ -21,7 +22,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        test695();
+        testAmz02();
     }
     
     /**
@@ -180,4 +181,15 @@ public class Main {
         ArrayUtil au = new ArrayUtil();
         System.out.println(au.maxAreaOfIsland(input));
     }     
+    
+    /**
+     * Amz 02
+     * Reads in a text file and checks to see if the paretheses, curly
+     * braces, and square brackets are balanced.
+     */  
+    public static void testAmz02() {
+        String abc = "aerer([bbb)]e";
+        AmzUtil az = new AmzUtil();
+        System.out.println(az.isBalanced((abc)));
+    }        
 }
