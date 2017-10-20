@@ -101,7 +101,24 @@ public class TreeUtil {
      * @param node 
      */ 
     public boolean isValidBST(TreeNode root) {
-       return false;
+       List<Integer> result = new ArrayList<Integer>();
+       return isBstInOrder(root, result);
+    }
+    private boolean isBstInOrder(TreeNode root, List<Integer> result) {
+        boolean isOrder = true;
+        if (root == null) {
+            return true;
+        }
+        isOrder &= isBstInOrder(root.left, result);
+        if (!result.isEmpty()) {
+            if (result.get(result.size()-1) < root.val)
+                result.add(root.val);
+            else 
+                return false;
+        } else 
+            result.add(root.val);
+                isOrder &= isBstInOrder(root.right, result);
+        return isOrder;
     }
     
     /**

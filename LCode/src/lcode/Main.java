@@ -22,7 +22,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        testAmz02();
+        test98();
     }
     
     /**
@@ -191,5 +191,33 @@ public class Main {
         String abc = "aerer([bbb)]e";
         AmzUtil az = new AmzUtil();
         System.out.println(az.isBalanced((abc)));
-    }        
+    }  
+    
+    /**
+     * 98. Validate Binary Search Tree
+     * The left subtree of a node contains only nodes with keys less than the node's key.
+     * The right subtree of a node contains only nodes with keys greater than the node's key.
+     * Both the left and right subtrees must also be binary search trees.
+     * https://leetcode.com/problems/validate-binary-search-tree/description/
+     * 
+     * @param node 
+     */ 
+    public static void test98() {
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(7);
+        TreeNode d = new TreeNode(6);
+        TreeNode e = new TreeNode(7);
+        TreeNode f = new TreeNode(1);
+        TreeNode g = new TreeNode(3);        
+        a.left = b;
+        a.right = c;
+        c.left = d;
+        c.right = e;
+        b.left = f;
+        b.right = g;      
+        TreeUtil tu = new TreeUtil();
+        
+        System.out.println(tu.isValidBST(a));
+    }
 }
