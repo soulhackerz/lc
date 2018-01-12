@@ -64,4 +64,81 @@ public class AmzUtil {
         }
         return true;
     }
+    
+    
+    // This is the text editor interface. 
+    // Anything you type or change here will be seen by the other person in real time.
+
+
+    // (1) (2) (3) (4) (5) 6
+
+    // number of players
+    // intial player who has the gun
+
+    // last player when game terminates
+
+
+    // 1
+    // return 1
+
+    // 1 2 (start at 2) (2,1)
+    // return 1
+
+    // 1 2 3 (start at 2) (3,1)
+    // return 1
+
+    // 1 2 3 4
+    // return 2
+
+    // 1 2 3 4 5
+    // return 2
+    //2-->4-->1--4
+
+
+    /*public int survivor (int numberOfPlayer, int initialPlayer) {
+
+        // input is invalid, what to return?
+        if (initialPlayer >= numberOfPlayer) {
+            return -1;
+        }
+
+
+        if (numberOfPlayer <= 1) {
+            return initialPlayer;
+        }
+
+        int currentShooter = initialPlayer;
+        List<Integer> survivors = new ArrayList();
+
+        boolean[] survivors = new boolean[numberOfPlayer];
+        // for (int i = 0; i<numberOfPlayer;i++) {
+        //     survivors.add(i);
+        // }
+
+        for (int i = 0; i<numberOfPlayer;i++) {
+            survivors = true;
+        }
+        int numberOfS = numberOfPlayer;
+
+        //
+        while (numberOfS >1) {
+            if (currentShooter.next ) {
+                survivor.remove(currentShooter+1);
+                currentShooter.next = currentShooter.next.next;    
+                if (currentShooter+1 < survivors.size()) {
+                    currentShooter = currentShooter+1;
+                } 
+                else {
+                    currenshotter = survivor.get(0); 
+                }
+
+            } else {
+                survivor.remove(0);
+                currentShooter = survivor.get(0);
+            }
+            numberOfS--;
+        }
+
+        return currentShooter;
+    }   */ 
 }
