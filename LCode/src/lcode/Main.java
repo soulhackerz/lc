@@ -12,6 +12,7 @@ import lcode.solution.AmzUtil;
 import lcode.solution.ArrayUtil;
 import lcode.solution.ListUtil;
 import lcode.solution.TreeUtil;
+import lcode.test.LAmzUtilTest;
 
 /**
  *
@@ -22,7 +23,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        test98();
+        LAmzUtilTest.test387();
     }
     
     /**
