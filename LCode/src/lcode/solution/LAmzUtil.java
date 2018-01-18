@@ -32,7 +32,7 @@ public class LAmzUtil {
                 dupeMap.put(current, true);
             }
         }
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {  
            char current = s.charAt(i);
             if (!dupeMap.get(current))
                 return i;
@@ -45,7 +45,14 @@ public class LAmzUtil {
      * https://leetcode.com/problems/reverse-string/description/
      */
     public String reverseString(String s) {
-        return "";
+        char[] stringArray = s.toCharArray();
+        for (int i = 0; i < s.length()/2; i++) {
+            char temp = stringArray[i];
+            stringArray[i] = stringArray[s.length()-1-i];
+            stringArray[s.length()-1-i] = temp;
+        }
+        
+        return new String(stringArray);
     }
     
     /**
@@ -54,7 +61,27 @@ public class LAmzUtil {
      * https://leetcode.com/problems/reverse-words-in-a-string-ii/description/
      */
     public void reverseWords(char[] str) {
-
+        if (str == null || str.length == 0)
+            return ;
+        int start = 0;
+        int end = str.length;
+        reverseWord(str, start, end);
+        for (int i = 0; i < str.length; i++) {
+            if (str[i] == ' ') {
+                end = i;
+                reverseWord(str,start,end);
+                start = end+1;
+            }
+        }
+        reverseWord(str,start,str.length);
+        
+    }
+    private void reverseWord(char[] str, int start, int end) {
+        for (int i = start; i < (start+end)/2; i++) {
+            char temp = str[i];
+            str[i] = str[end-1-(i-start)];
+            str[end-1-(i-start)] = temp;
+        }
     }
     
     /**
