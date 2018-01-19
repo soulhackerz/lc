@@ -45,4 +45,14 @@ public class LAmzUtilTest {
         lau.reverseWords(a);   
         System.out.println(a);
     }
+    
+    /**
+     * 1. Two Sum
+     * https://leetcode.com/problems/two-sum/
+     */
+    public static void test1() {
+        LAmzUtil lau = new LAmzUtil();
+        int[] result = lau.twoSum(new int[]{3,2,4}, 6);
+        System.out.println(result[0]+":"+ result[1]);
+    }
 }

@@ -5,6 +5,7 @@
  */
 package lcode.solution;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -89,6 +90,26 @@ public class LAmzUtil {
      * https://leetcode.com/problems/two-sum/
      */
     public int[] twoSum(int[] nums, int target) {
-        return null;
+        Map<Integer,Integer> map = new HashMap();
+        
+        for (int i = 0; i < nums.length;i++) {
+            map.put(nums[i],i);
+        }
+        
+        for (int i = 0; i < nums.length;i++) {
+            if (map.containsKey(target-nums[i])&& i != map.get(target-nums[i])) {
+                return new int[] {i, map.get(target-nums[i])};
+            }
+        }
+        return new int[]{};
+    }
+    
+    /**
+     * 325. Maximum Size Subarray Sum Equals k
+     * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
+     */
+    public int maxSubArrayLen(int[] nums, int k) {
+        
+        return -1;
     }
 }
