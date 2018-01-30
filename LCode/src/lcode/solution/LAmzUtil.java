@@ -142,9 +142,9 @@ public class LAmzUtil {
         }
         if (ver1Array.length == 1 && ver2Array.length == 1) {
             return 0;
-        } else if (ver1Array.length == 1 && ver2Array.length == 2){
+        } else if (ver1Array.length == 1 && ver2Array.length >= 2){
             return -1;
-        }else if (ver1Array.length == 2 && ver2Array.length == 1){
+        }else if (ver1Array.length >= 2 && ver2Array.length == 1){
             return 1;
         }
         
