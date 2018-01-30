@@ -55,4 +55,24 @@ public class LAmzUtilTest {
         int[] result = lau.twoSum(new int[]{3,2,4}, 6);
         System.out.println(result[0]+":"+ result[1]);
     }
+    
+    /**
+     * 325. Maximum Size Subarray Sum Equals k
+     * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
+     */
+    public static void test325() {
+        LAmzUtil lau = new LAmzUtil();
+        int[] input = {1,1,0};
+        System.out.println(lau.maxSubArrayLen(input, 1));
+    }
+
+    /**
+     * 165. Compare Version Numbers
+     * https://leetcode.com/problems/compare-version-numbers/description/
+     */
+    public static void test165() {
+        LAmzUtil lau = new LAmzUtil();
+
+        System.out.println(lau.compareVersion("1.4", "13.1"));
+    }
 }

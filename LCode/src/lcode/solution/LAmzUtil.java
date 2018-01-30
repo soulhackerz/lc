@@ -109,7 +109,52 @@ public class LAmzUtil {
      * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
      */
     public int maxSubArrayLen(int[] nums, int k) {
-        
-        return -1;
+        Map<Integer, Integer> sumMap = new HashMap();
+        int sum=0, max = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (sum == k) {
+                max = Math.max(max, i+1);
+            } 
+            else if (sumMap.containsKey(sum-k)){
+                max = Math.max(max, i-sumMap.get(sum-k));
+            }
+            if (!sumMap.containsKey(sum)){
+                sumMap.put(sum,i);
+            }
+        }
+        return max;
     }
+    
+    /**
+     * 165. Compare Version Numbers
+     * https://leetcode.com/problems/compare-version-numbers/description/
+     */
+    public int compareVersion(String version1, String version2) {
+        String[] ver1Array = version1.split("\\.");
+        String[] ver2Array = version2.split("\\.");
+        
+        if (Integer.parseInt(ver1Array[0]) > Integer.parseInt(ver2Array[0])) {
+            return 1;
+        } 
+        else if (Integer.parseInt(ver1Array[0]) < Integer.parseInt(ver2Array[0])) {
+            return -1;
+        }
+        if (ver1Array.length == 1 && ver2Array.length == 1) {
+            return 0;
+        } else if (ver1Array.length == 1 && ver2Array.length == 2){
+            return -1;
+        }else if (ver1Array.length == 2 && ver2Array.length == 1){
+            return 1;
+        }
+        
+        if (Integer.parseInt(ver1Array[1]) > Integer.parseInt(ver2Array[1])) {
+            return 1;
+        } 
+        else if (Integer.parseInt(ver1Array[1]) < Integer.parseInt(ver2Array[1])) {
+            return -1;
+        } 
+        return 0;
+    }
+    
 }
