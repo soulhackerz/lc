@@ -131,29 +131,30 @@ public class LAmzUtil {
      * https://leetcode.com/problems/compare-version-numbers/description/
      */
     public int compareVersion(String version1, String version2) {
-        String[] ver1Array = version1.split("\\.");
-        String[] ver2Array = version2.split("\\.");
+        String[] v1Array = version1.split("\\.");
+        String[] v2Array = version2.split("\\.");
         
-        if (Integer.parseInt(ver1Array[0]) > Integer.parseInt(ver2Array[0])) {
-            return 1;
-        } 
-        else if (Integer.parseInt(ver1Array[0]) < Integer.parseInt(ver2Array[0])) {
-            return -1;
+        int i = 0, j = 0;
+        while (i < v1Array.length && j < v2Array.length) {
+            if (Integer.parseInt(v1Array[i]) > Integer.parseInt(v2Array[j])) {
+                return 1;
+            } 
+            else if (Integer.parseInt(v1Array[i]) < Integer.parseInt(v2Array[j])) {
+                return -1;
+            }
+            i++;
+            j++;
         }
-        if (ver1Array.length == 1 && ver2Array.length == 1) {
-            return 0;
-        } else if (ver1Array.length == 1 && ver2Array.length >= 2){
-            return -1;
-        }else if (ver1Array.length >= 2 && ver2Array.length == 1){
-            return 1;
+        while (i < v1Array.length) {
+            if (Integer.parseInt(v1Array[i]) != 0)
+                    return 1;
+            i++;
         }
-        
-        if (Integer.parseInt(ver1Array[1]) > Integer.parseInt(ver2Array[1])) {
-            return 1;
-        } 
-        else if (Integer.parseInt(ver1Array[1]) < Integer.parseInt(ver2Array[1])) {
-            return -1;
-        } 
+        while (j < v2Array.length) {
+            if (Integer.parseInt(v2Array[j]) != 0)
+                    return -1;
+            j++;
+        }        
         return 0;
     }
     
