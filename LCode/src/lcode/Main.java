@@ -23,7 +23,44 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        LAmzUtilTest.test165();
+        LAmzUtilTest.test6();
+
+    }
+    
+    public static String longestPalindrome(String s) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < s.length()-1; i++){
+            sb.append(s.charAt(i));
+            sb.append('*');
+        }
+        sb.append(s.charAt(s.length()-1));
+        String newS = new String(sb);
+        System.out.println(newS);
+        int max = 0;
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i <= newS.length();i++){
+            int j = i; int k=i;
+            while (j >=0 && k <= newS.length()) {
+                if (isPalindrome(newS,j,k)) {
+                    if ((k-j)>max) {
+                        max = k-j;
+                        start = j;
+                        end = k;
+                    }
+                }
+                j--;
+                k++;
+            }
+        }
+        return newS.substring(start,end);
+    }
+    public static boolean isPalindrome(String s, int start, int end) {
+        for(int i = start; i < end/2; i++) {
+            if (s.charAt(i) != s.charAt(end-i-1))
+                return false;
+        }
+        return true;
     }
     
     /**

@@ -157,5 +157,50 @@ public class LAmzUtil {
         }        
         return 0;
     }
+
+    /**
+     * 5. Longest Palindromic Substring
+     * https://leetcode.com/problems/longest-palindromic-substring/description/
+     */    
+    public String longestPalindrome(String s) {
+        
+        int max = 0;
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < s.length();i++){
+            int len1 = checkAroundCentre(s, i, i);
+            int len2 = checkAroundCentre(s, i, i+1);
+            if (len1 > len2 && len1> max) {
+                max = len1;
+                start = i - max/2;
+                end = i+max/2+1;
+            }
+            else if (len1<=len2 && len2 >=max) {
+                max = len2;
+                start = i+1 -max/2;
+                end = i+1+max/2;
+            }
+        }
+        return s.substring(start,end);
+    }
+    
+    private int checkAroundCentre(String s, int left, int right) {
+        int currentLen = 0;
+        while (left>=0 && right <= s.length()-1 && s.charAt(left) == s.charAt(right)) {
+            currentLen = right -left +1;
+            right++;
+            left --;
+        }
+        
+        return currentLen;
+    }    
+    
+    /**
+     * 238. Product of Array Except Self
+     * https://leetcode.com/problems/product-of-array-except-self/description/
+     */      
+    public int[] productExceptSelf(int[] nums) {
+        return null;
+    }    
     
 }

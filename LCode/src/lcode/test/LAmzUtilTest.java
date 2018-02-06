@@ -75,4 +75,10 @@ public class LAmzUtilTest {
 
         System.out.println(lau.compareVersion("1.4", "13.1"));
     }
+    
+    public static void test6() {
+        LAmzUtil lau = new LAmzUtil();
+
+        System.out.println(lau.longestPalindrome("cbbd"));
+    }
 }
