@@ -76,7 +76,11 @@ public class LAmzUtilTest {
         System.out.println(lau.compareVersion("1.4", "13.1"));
     }
     
-    public static void test6() {
+    /**
+     * 5. Longest Palindromic Substring
+     * https://leetcode.com/problems/longest-palindromic-substring/description/
+     */    
+    public static void test5() {
         LAmzUtil lau = new LAmzUtil();
 
         System.out.println(lau.longestPalindrome("cbbd"));
