@@ -22,4 +22,14 @@ public class LGoogleUtilTest {
 
         System.out.println(lau.addBoldTag("abcdabcd", new String[]{"abc"}));
     }
+    
+    /**
+     * 686. Repeated String Match
+     * https://leetcode.com/problems/repeated-string-match/description/
+     */
+    public static void test686() {
+        LGoogleUtil lau = new LGoogleUtil();
+
+        System.out.println(lau.repeatedStringMatch("abcd", "abcdabcdabcd"));
+    }
 }

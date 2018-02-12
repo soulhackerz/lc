@@ -55,5 +55,32 @@ public class LGoogleUtil {
         return sb.toString();
     }
     
+    
+    /**
+     * 686. Repeated String Match
+     * https://leetcode.com/problems/repeated-string-match/description/
+     */
+    public int repeatedStringMatch(String A, String B) {
+        if (A.length() > B.length()) {
+            if (A.indexOf(B) > 0) {
+                return 1;
+            }
+            else if ((A+A).indexOf(B) > 0 ) {
+                return 2;
+            }
+            return -1;
+        }
+        StringBuilder sb = new StringBuilder(A);
+        int count = 1;
+        while (sb.indexOf(B)<0) {
+
+            if (sb.length()-A.length() > B.length()) {
+                return -1;
+            }
+            sb.append(A);
+            count++;
+        }
+        return count;
+    }  
 
 }
