@@ -32,4 +32,38 @@ public class LGoogleUtilTest {
 
         System.out.println(lau.repeatedStringMatch("abcd", "abcdabcdabcd"));
     }
+
+    /**
+     * 683. K Empty Slots
+     * https://leetcode.com/problems/k-empty-slots/description/
+     */    
+    public static void test683() {
+       LGoogleUtil gau = new LGoogleUtil();
+       
+       System.out.println(gau.kEmptySlots2(new int[] {1,3,2}, 1));
+    }
+
+    /**
+     * 681. Next Closest Time
+     * https://leetcode.com/problems/next-closest-time/description/
+     */
+    public static void test681() {
+        
+    }
+
+    /**
+     * 687. Longest Univalue Path
+     * https://leetcode.com/problems/longest-univalue-path/description/
+     */
+    public static void test687() {
+        
+    }
+
+    /**
+     * 482. License Key Formatting
+     * https://leetcode.com/problems/license-key-formatting/description/
+     */
+    public static void test482() {
+        
+    }
 }
