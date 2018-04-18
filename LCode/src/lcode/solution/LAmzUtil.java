@@ -8,6 +8,7 @@ package lcode.solution;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 
 
@@ -203,4 +204,18 @@ public class LAmzUtil {
         return null;
     }    
     
+    /**
+     * 126. Word Ladder II
+     * https://leetcode.com/problems/word-ladder-ii/description/
+     * beginWord = "hit"
+     * endWord = "cog"
+     * wordList = ["hot","dot","dog","lot","log","cog"]
+     * @param beginWord
+     * @param endWord
+     * @param wordList
+     * @return 
+     */
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+        return null;
+    }
 }
