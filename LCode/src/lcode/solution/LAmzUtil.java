@@ -216,6 +216,38 @@ public class LAmzUtil {
     }    
     
     /**
+     * 273. Integer to English Words
+     * https://leetcode.com/problems/integer-to-english-words/description/
+     * Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than 231 - 1.
+        For example,
+        123 -> "One Hundred Twenty Three"
+        12345 -> "Twelve Thousand Three Hundred Forty Five"
+        1234567 -> "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+     * @param num
+     * @return 
+     */
+    public String numberToWords(int num) {
+        return "";
+    }   
+    
+    /**
+     * 287. Find the Duplicate Number
+     * https://leetcode.com/problems/find-the-duplicate-number/description/
+     * Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.
+
+        Note:
+        You must not modify the array (assume the array is read only).
+        You must use only constant, O(1) extra space.
+        Your runtime complexity should be less than O(n2).
+        There is only one duplicate number in the array, but it could be repeated more than once.
+     * @param nums
+     * @return 
+     */
+    public int findDuplicate(int[] nums) {
+        return -1;
+    }
+    
+    /**
      * 126. Word Ladder II
      * https://leetcode.com/problems/word-ladder-ii/description/
      * beginWord = "hit"
