@@ -85,4 +85,17 @@ public class LAmzUtilTest {
 
         System.out.println(lau.longestPalindrome("cbbd"));
     }
+    
+    /**
+     * 238. Product of Array Except Self
+     * https://leetcode.com/problems/product-of-array-except-self/description/
+     */      
+    public static void test238() {
+        LAmzUtil lau = new LAmzUtil();
+        int[] result = lau.productExceptSelf(new int[] { 1, 2, 3, 4});
+        for (int i : result) {
+            System.out.print(i+",");
+        }
+        System.out.println();
+    }
 }
