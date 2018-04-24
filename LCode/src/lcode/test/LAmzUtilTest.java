@@ -136,4 +136,19 @@ public class LAmzUtilTest {
         LAmzUtil lau = new LAmzUtil();
         System.out.println(lau.findDuplicate(new int[] {1,3,4,2,2,}));
     }
+    
+    /**
+     * 2. Add Two Numbers
+     * https://leetcode.com/problems/add-two-numbers/description/
+     */
+    public static void test2() {
+        LAmzUtil lau = new LAmzUtil();
+        ListNode a = new ListNode(2);
+        a.next = new ListNode(4);
+        a.next.next = new ListNode(3);
+        ListNode b = new ListNode(5);
+        b.next = new ListNode(6);
+        b.next.next = new ListNode(4);
+        System.out.println(lau.addTwoNumbers(a,b));
+    }
 }

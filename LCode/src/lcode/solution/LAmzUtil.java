@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import lcode.lib.ListNode;
 
 
 /**
@@ -343,6 +344,32 @@ public class LAmzUtil {
         return slow;
     }
     
+    /**
+     * 2. Add Two Numbers
+     * https://leetcode.com/problems/add-two-numbers/description/
+     */
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int carryOver = 0, sum = 0;
+        ListNode head = new ListNode(0);
+        ListNode result = head;
+        
+        while (l1 != null || l2 != null || carryOver != 0) {
+            sum = (l1!=null? l1.val:0) + (l2!=null ? l2.val:0)+carryOver;
+            carryOver = sum /10;
+            sum %= 10;
+            result.next = new ListNode(sum);
+            result = result.next;
+            if (l1 != null)  {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        
+        return head.next;
+    }
+
     /**
      * 126. Word Ladder II
      * https://leetcode.com/problems/word-ladder-ii/description/
