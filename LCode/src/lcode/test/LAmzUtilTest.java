@@ -151,4 +151,16 @@ public class LAmzUtilTest {
         b.next.next = new ListNode(4);
         System.out.println(lau.addTwoNumbers(a,b));
     }
+    
+    public static void test160() {
+        LAmzUtil lau = new LAmzUtil();
+        ListNode a = new ListNode(2);
+        a.next = new ListNode(4);
+        a.next.next = new ListNode(3);
+        ListNode b = new ListNode(5);
+        b.next = new ListNode(6);
+        b.next.next = new ListNode(4);
+        b.next.next.next = a.next.next;
+        System.out.println(lau.getIntersectionNode(a, b));
+    }
 }

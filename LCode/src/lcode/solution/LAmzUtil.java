@@ -371,6 +371,54 @@ public class LAmzUtil {
     }
 
     /**
+     * 160. Intersection of Two Linked Lists
+     * https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+     */
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode tempA = headA;
+        ListNode tempB = headB;
+        int countA = 0;
+        int countB = 0;
+        
+        while (tempA != null) {
+            tempA = tempA.next;
+            countA++;
+        }
+        
+        while (tempB != null) {
+            tempB = tempB.next;
+            countB++;
+        }
+        
+        tempA = headA;
+        tempB = headB;
+        if (countA > countB) {
+            int diff = countA - countB;
+            while (diff > 0) {
+                tempA = tempA.next;
+                diff--;
+            }
+        }
+        
+        if (countB > countA) {
+            int diff = countB - countA;
+            while (diff > 0) {
+                tempB = tempB.next;
+                diff--;
+            }
+        }
+        
+        while (tempA != null && tempB != null) {
+            if (tempA.equals(tempB)) {
+                return tempA;
+            }
+            tempA = tempA.next;
+            tempB = tempB.next;
+        }
+        return null;
+    }    
+    
+    /**
      * 126. Word Ladder II
      * https://leetcode.com/problems/word-ladder-ii/description/
      * beginWord = "hit"
