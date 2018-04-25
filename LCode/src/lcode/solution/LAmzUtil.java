@@ -419,6 +419,57 @@ public class LAmzUtil {
     }    
     
     /**
+     * 23. Merge k Sorted Lists
+     * https://leetcode.com/problems/merge-k-sorted-lists/description/
+     */
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
+            return null;
+        }
+        int start = 0;
+        int end = lists.length-1;
+        while (end > 0) {
+            lists[start] = mergeTwoLists(lists[start], lists[end]);
+            start ++;
+            end--;
+            if (start >= end) {
+                start = 0;
+            }
+        }
+        return lists[0];
+    }
+    
+    /**
+     * 21. Merge Two Sorted Lists
+     * https://leetcode.com/problems/merge-two-sorted-lists/description/
+     */
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode temp = head;
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                temp.next = l1;
+                l1 = l1.next;
+            } else {
+                temp.next = l2;
+                l2 = l2.next;
+            }
+            temp = temp.next;
+        }
+        while (l1 != null) {
+            temp.next = l1;
+            l1 = l1.next;
+            temp = temp.next;
+        }
+        while (l2 != null) {
+            temp.next = l2;
+            l2 = l2.next;
+            temp = temp.next;
+        }
+        return head.next;
+    }    
+    
+    /**
      * 126. Word Ladder II
      * https://leetcode.com/problems/word-ladder-ii/description/
      * beginWord = "hit"

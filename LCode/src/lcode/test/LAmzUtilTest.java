@@ -152,6 +152,10 @@ public class LAmzUtilTest {
         System.out.println(lau.addTwoNumbers(a,b));
     }
     
+    /**
+     * 160. Intersection of Two Linked Lists
+     * https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+     */    
     public static void test160() {
         LAmzUtil lau = new LAmzUtil();
         ListNode a = new ListNode(2);
@@ -163,4 +167,39 @@ public class LAmzUtilTest {
         b.next.next.next = a.next.next;
         System.out.println(lau.getIntersectionNode(a, b));
     }
+    
+    /**
+     * 21. Merge Two Sorted Lists
+     * https://leetcode.com/problems/merge-two-sorted-lists/description/
+     */
+    public static void test21() {
+        LAmzUtil lau = new LAmzUtil();
+        ListNode a = new ListNode(2);
+        a.next = new ListNode(3);
+        a.next.next = new ListNode(4);
+        ListNode b = new ListNode(5);
+        b.next = new ListNode(6);
+        b.next.next = new ListNode(7);
+        System.out.println(lau.mergeTwoLists(a, b));
+    } 
+    
+    /**
+     * 23. Merge k Sorted Lists
+     * https://leetcode.com/problems/merge-k-sorted-lists/description/
+     */    
+    public static void test23() {
+        LAmzUtil lau = new LAmzUtil();
+        ListNode a = new ListNode(2);
+        a.next = new ListNode(3);
+        a.next.next = new ListNode(4);
+        ListNode b = new ListNode(5);
+        b.next = new ListNode(6);
+        b.next.next = new ListNode(7);
+        ListNode c = new ListNode(1);
+        c.next = new ListNode(3);
+        c.next.next = new ListNode(4);      
+        c.next.next.next = new ListNode(9);  
+        ListNode[] input = {a,b,c};
+        System.out.println(lau.mergeKLists(input));
+    }       
 }
