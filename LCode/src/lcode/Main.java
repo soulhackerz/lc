@@ -24,7 +24,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        LAmzUtilTest.test127();
+        LAmzUtilTest.test102();
 
     }
     

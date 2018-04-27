@@ -5,6 +5,7 @@
  */
 package lcode.solution;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import lcode.lib.ListNode;
+import lcode.lib.TreeNode;
 
 
 /**
@@ -572,5 +574,43 @@ public class LAmzUtil {
             }
         }
         return 0;
+    }
+    
+    /**
+     * 102. Binary Tree Level Order Traversal
+     * https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+     */
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        
+        List<List<Integer>> result = new ArrayList();
+        List<Integer> current = new ArrayList();
+        
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList();
+        queue.offer(root);
+        int currentCount = 1;
+        int intermidiateCount = 0;
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.poll();
+            currentCount--;
+            if (temp != null) {
+               current.add(temp.val);
+               queue.offer(temp.left);
+               queue.offer(temp.right);
+                intermidiateCount+=2;
+            }
+            
+
+            if (currentCount == 0) {
+                currentCount = intermidiateCount;
+                intermidiateCount = 0;
+                if (!current.isEmpty())
+                    result.add(current);
+                current = new ArrayList();
+            } 
+        }
+        return result;
     }    
 }

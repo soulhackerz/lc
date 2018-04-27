@@ -8,6 +8,7 @@ package lcode.test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import lcode.lib.ListNode;
+import lcode.lib.TreeNode;
 import lcode.solution.LAmzUtil;
 import lcode.solution.ListUtil;
 
@@ -232,4 +233,17 @@ public class LAmzUtilTest {
         System.out.println(lau.ladderLength("hit", "cog", Arrays.asList(new String[]{"hot","dot","dog","lot","log","cog"})));
     }
     
+    /**
+     * 102. Binary Tree Level Order Traversal
+     * https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+     */    
+    public static void test102() {
+        LAmzUtil lau = new LAmzUtil();
+        TreeNode tree = new TreeNode(3);
+        tree.left = new TreeNode(9);
+        tree.right = new TreeNode(20);
+        tree.right.left = new TreeNode(15);
+        tree.right.right = new TreeNode(7);
+        System.out.println(lau.levelOrder(tree));
+    }
 }
