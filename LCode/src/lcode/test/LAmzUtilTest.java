@@ -5,6 +5,8 @@
  */
 package lcode.test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import lcode.lib.ListNode;
 import lcode.solution.LAmzUtil;
 import lcode.solution.ListUtil;
@@ -201,5 +203,33 @@ public class LAmzUtilTest {
         c.next.next.next = new ListNode(9);  
         ListNode[] input = {a,b,c};
         System.out.println(lau.mergeKLists(input));
-    }       
+    }
+    
+    /**
+     * 200. Number of Islands
+     * https://leetcode.com/problems/number-of-islands/description/
+     */    
+    public static void test200() {
+        LAmzUtil lau = new LAmzUtil();
+        System.out.println(lau.numIslands(new char[][] {{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}}));
+    }
+    
+    /**
+     * 136. Single Number
+     * https://leetcode.com/problems/single-number/description/
+     */
+    public static void test136() {
+        LAmzUtil lau = new LAmzUtil();
+        System.out.println(lau.singleNumber(new int[] {1,1,2,2,5}));
+    }
+    
+    /**
+     * 127. Word Ladder
+     * https://leetcode.com/submissions/detail/151770640/
+     */    
+    public static void test127() {
+        LAmzUtil lau = new LAmzUtil();
+        System.out.println(lau.ladderLength("hit", "cog", Arrays.asList(new String[]{"hot","dot","dog","lot","log","cog"})));
+    }
+    
 }

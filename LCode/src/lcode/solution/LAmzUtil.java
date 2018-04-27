@@ -8,8 +8,11 @@ package lcode.solution;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 import lcode.lib.ListNode;
 
 
@@ -483,4 +486,91 @@ public class LAmzUtil {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         return null;
     }
+    
+    /**
+     * 200. Number of Islands
+     * https://leetcode.com/problems/number-of-islands/description/
+     */
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0)
+            return 0;
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+        int islandCount = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (!visited[i][j] && grid[i][j] == '1') {
+                    islandCount++;
+                    expand(grid, visited, i, j);
+                }
+            }
+        }
+        
+        return islandCount;
+    }
+    
+    private void expand(char[][] grid, boolean[][] visited, int i, int j) {
+        if (i <0 || j < 0 || i >= grid.length || j >= grid[i].length || visited[i][j] == true) {
+            return ;
+        }
+        if (grid[i][j] == '1') {
+            visited[i][j] = true;
+        } else 
+            return;
+        expand(grid, visited, i+1, j);
+        expand(grid, visited, i, j+1);
+        expand(grid, visited, i-1, j);
+        expand(grid, visited, i, j-1);
+    }
+    
+    /**
+     * 136. Single Number
+     * https://leetcode.com/problems/single-number/description/
+     */
+    public int singleNumber(int[] nums) {
+        int result = 0;
+        for (int i : nums) {
+            result ^= i;
+        }
+        return result;
+    }  
+    
+    /**
+     * 127. Word Ladder
+     * https://leetcode.com/submissions/detail/151770640/
+     */
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        if (!wordList.contains(endWord)) {
+            return 0;
+        }
+        Set<String> wordSet = new HashSet<String>(wordList);
+        Queue<String> queue = new LinkedList();
+        HashMap<String, Integer> visitedWords = new HashMap();      
+        queue.offer(beginWord);
+        visitedWords.put(beginWord, 1);
+        
+        while (!queue.isEmpty()) {
+            String curWord = queue.poll();
+            
+            
+            for (int i = 0; i < curWord.length(); i++)
+            {
+                char[] curWordArray = curWord.toCharArray();
+                for (char c = 'a'; c <='z'; c++) {
+                    curWordArray[i]=c;
+                    String temp = new String(curWordArray);
+                    if (wordSet.contains(temp)) {
+                        if (temp.equals(endWord)) {
+                            return visitedWords.get(curWord)+1;
+                        }
+                        if (!visitedWords.containsKey(temp)) {
+                            queue.offer(temp);
+                            visitedWords.put(temp, visitedWords.get(curWord)+1);
+                        }
+
+                    }
+                }
+            }
+        }
+        return 0;
+    }    
 }
